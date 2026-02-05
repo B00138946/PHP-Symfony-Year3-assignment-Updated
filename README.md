@@ -1,6 +1,6 @@
-# PHP Year3 project done 2023 and now updated in 2026
-
-
+# PHP Symfony Year3 project
+## Completed in 2023 and now updated in 2026
+A online shopping website where admins can add, edit, and delete clothing products through a CRUD interface. All products are stored in a MySQL database and are displayed on the website's homepage. Users can register and log in, and once logged in they can view available products, including details such as brand, price, and images. The system uses role-based access, ensuring only admins can manage products while customers can browse the store securely.
 
 
 
