@@ -12,9 +12,6 @@ A online shopping website where admins can add, edit, and delete clothing produc
 
 
 
-
-# CRUD quickstart project
-
 ## Setup
 
 To start working with this project you will need to:
