@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Product Details{% endblock %}
+
+{% block body %}
+    <h1>Edit Product Details</h1>
+    <style>
+        a:link, a:visited {
+            background-color: darkblue;
+            color: white;
+            border: 2px black;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 12px;
+        }
+
+        a:hover, a:active {
+            background-color: black;
+            color: lightskyblue;
+        }
+    </style>
+
+    {{ include('productDetails/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_productDetails_index') }}">back to list</a>
+
+    {{ include('productDetails/_delete_form.html.twig') }}
+{% endblock %}

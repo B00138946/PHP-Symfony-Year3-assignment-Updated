@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Product Name{% endblock %}
+
+{% block body %}
+    <h1>Product Name</h1>
+    <style>
+        a:link, a:visited {
+            background-color: darkblue;
+            color: white;
+            border: 2px black;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 12px;
+        }
+
+        a:hover, a:active {
+            background-color: black;
+            color: lightskyblue;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background-color: #183691;
+            border-spacing: 0;
+            border-radius: 10px;
+            border: 1px solid black;
+
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            color:white;
+
+        }
+
+        tr:hover {background-color: #3b82f6;}
+
+
+
+    </style>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>
+                    <a href="{{ path('app_product_show', {'id': product.id}) }}">show</a>
+                    <a href="{{ path('app_product_edit', {'id': product.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_product_new') }}">Create new</a>
+
+
+{% endblock %}

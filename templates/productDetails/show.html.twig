@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Product Details{% endblock %}
+
+{% block body %}
+    <h1>Product Details 1</h1>
+    <style>
+        a:link, a:visited {
+            background-color: darkblue;
+            color: white;
+            border: 2px black;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 12px;
+        }
+
+        a:hover, a:active {
+            background-color: black;
+            color: lightskyblue;
+        }
+    </style>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ productDetails.id }}</td>
+            </tr>
+            <tr>
+                <th>Brand</th>
+                <td>{{ productDetails.Brand }}</td>
+            </tr>
+            <tr>
+                <th>Clothing Name</th>
+                <td>{{ productDetails.ClothingName }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>
+                    {% if productDetails.imagePath %}
+                        <img src="{{ asset('uploads/' ~ productDetails.imagePath) }}" alt="{{ productDetails.Brand }}">
+                    {% else %}
+                        No image uploaded
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ productDetails.Price }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_productDetails_index') }}">back to list</a>
+
+    <a href="{{ path('app_productDetails_edit', {'id': productDetails.id}) }}">edit</a>
+
+    {{ include('productDetails/_delete_form.html.twig') }}
+{% endblock %}
